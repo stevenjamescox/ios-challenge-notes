@@ -42,9 +42,9 @@ class NotesTableViewController: UITableViewController, UITextFieldDelegate {
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             let note = NoteController.sharedController.notes[indexPath.row]
             NoteController.sharedController.removeNote(note)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Left)
         } else if editingStyle == .Insert {
         }
     }
