@@ -92,8 +92,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Note" id="jwQ-uc-l1G">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="m2l-u8-NuG"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="m2l-u8-NuG">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="QcU-Nw-vsX" id="GwM-Gb-A89"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="bodyField" destination="sLo-ES-KvT" id="cHN-6O-VVg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ECi-9L-qf5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

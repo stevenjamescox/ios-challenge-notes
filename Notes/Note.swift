@@ -10,7 +10,7 @@ import Foundation
 
 class Note: Equatable {
     
-    private var keyBody = "bodyKey"
+    private var keyBody = "keyBody"
     
     var body: String
     
