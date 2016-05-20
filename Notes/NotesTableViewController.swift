@@ -33,7 +33,6 @@ class NotesTableViewController: UITableViewController, UITextFieldDelegate {
         return NoteController.sharedController.notes.count
     }
     
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("noteCell", forIndexPath: indexPath)
         let note = NoteController.sharedController.notes[indexPath.row]
@@ -44,12 +43,14 @@ class NotesTableViewController: UITableViewController, UITextFieldDelegate {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            let note = NoteController.sharedController.notes[indexPath.row]
+            NoteController.sharedController.removeNote(note)
         } else if editingStyle == .Insert {
         }
     }
-
+    
     // MARK: - Navigation
-
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "addSegue" {
         } else if segue.identifier == "editSegue"{

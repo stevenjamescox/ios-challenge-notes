@@ -30,6 +30,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="QcU-Nw-vsX" kind="show" identifier="editSegue" id="HKQ-2L-0o2"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -44,9 +47,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <segue destination="QcU-Nw-vsX" kind="show" identifier="editSegue" id="blB-Rf-OUX"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hEN-fa-Kjz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -126,6 +126,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Bzx-oM-LyA"/>
+        <segue reference="HKQ-2L-0o2"/>
     </inferredMetricsTieBreakers>
 </document>
