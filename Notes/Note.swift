@@ -33,7 +33,6 @@ class Note: Equatable {
 func ==(lhs: Note, rhs: Note) -> Bool {
     return lhs.body == rhs.body
     
-    
 }
 
 
