@@ -14,6 +14,7 @@
 		95AABB441CEF6224004C7F4E /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AABB431CEF6224004C7F4E /* NotesTableViewController.swift */; };
 		95AABB461CEF622F004C7F4E /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AABB451CEF622F004C7F4E /* Note.swift */; };
 		95AABB481CEF6238004C7F4E /* NoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AABB471CEF6238004C7F4E /* NoteController.swift */; };
+		95AABB501CEF7AF3004C7F4E /* NotesSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AABB4F1CEF7AF3004C7F4E /* NotesSearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		95AABB431CEF6224004C7F4E /* NotesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
 		95AABB451CEF622F004C7F4E /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		95AABB471CEF6238004C7F4E /* NoteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteController.swift; sourceTree = "<group>"; };
+		95AABB4F1CEF7AF3004C7F4E /* NotesSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesSearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		95AABB491CEF6240004C7F4E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				95AABB4F1CEF7AF3004C7F4E /* NotesSearchViewController.swift */,
 				95AABB411CEF6211004C7F4E /* NotesDetailViewController.swift */,
 				95AABB431CEF6224004C7F4E /* NotesTableViewController.swift */,
 			);
@@ -177,6 +180,7 @@
 			files = (
 				1AFCF6BE1CDC050E006D2F3D /* AppDelegate.swift in Sources */,
 				95AABB421CEF6211004C7F4E /* NotesDetailViewController.swift in Sources */,
+				95AABB501CEF7AF3004C7F4E /* NotesSearchViewController.swift in Sources */,
 				95AABB441CEF6224004C7F4E /* NotesTableViewController.swift in Sources */,
 				95AABB461CEF622F004C7F4E /* Note.swift in Sources */,
 				95AABB481CEF6238004C7F4E /* NoteController.swift in Sources */,
