@@ -8,7 +8,7 @@
         <!--Notes-->
         <scene sceneID="J3f-x7-D79">
             <objects>
-                <tableViewController id="2Tj-wt-OBr" sceneMemberID="viewController">
+                <tableViewController id="2Tj-wt-OBr" customClass="NotesTableViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="5TN-hQ-nik">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,7 +55,7 @@
         <!--New Note-->
         <scene sceneID="POa-J9-HIK">
             <objects>
-                <viewController id="QcU-Nw-vsX" sceneMemberID="viewController">
+                <viewController id="QcU-Nw-vsX" customClass="NotesDetailViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qed-QF-yJy"/>
                         <viewControllerLayoutGuide type="bottom" id="ONM-yg-GvX"/>
@@ -63,7 +63,33 @@
                     <view key="view" contentMode="scaleToFill" id="YqL-Yh-VEO">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PET-rE-rOj">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sLo-ES-KvT">
+                                        <rect key="frame" x="10" y="10" width="580" height="516"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="sLo-ES-KvT" firstAttribute="leading" secondItem="PET-rE-rOj" secondAttribute="leading" constant="10" id="HTg-vR-mce"/>
+                                    <constraint firstAttribute="bottom" secondItem="sLo-ES-KvT" secondAttribute="bottom" constant="10" id="X2H-IG-ZkC"/>
+                                    <constraint firstItem="sLo-ES-KvT" firstAttribute="top" secondItem="PET-rE-rOj" secondAttribute="top" constant="10" id="jGT-o2-SBI"/>
+                                    <constraint firstAttribute="trailing" secondItem="sLo-ES-KvT" secondAttribute="trailing" constant="10" id="rhf-vD-TSI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PET-rE-rOj" firstAttribute="top" secondItem="Qed-QF-yJy" secondAttribute="bottom" id="Ogr-ij-dmu"/>
+                            <constraint firstItem="ONM-yg-GvX" firstAttribute="top" secondItem="PET-rE-rOj" secondAttribute="bottom" id="Sk3-0M-WPw"/>
+                            <constraint firstItem="PET-rE-rOj" firstAttribute="leading" secondItem="YqL-Yh-VEO" secondAttribute="leading" id="Zja-Ij-XRl"/>
+                            <constraint firstAttribute="trailing" secondItem="PET-rE-rOj" secondAttribute="trailing" id="l2H-cu-kAO"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Note" id="jwQ-uc-l1G">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="m2l-u8-NuG"/>

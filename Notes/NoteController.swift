@@ -7,3 +7,24 @@
 //
 
 import Foundation
+
+class NoteController {
+    
+    let sharedController = NoteController()
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

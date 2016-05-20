@@ -10,20 +10,28 @@ import Foundation
 
 class Note: Equatable {
     
-    var title: String
+    private var keyBody = "bodyKey"
+    
     var body: String
     
-    init(title: String, body: String){
-        self.title = title
+    var dictionaryCopy: [String: AnyObject]{
+        return [keyBody: body]
+    }
+    
+    init(body: String){
         self.body = body
-        
-        
+    }
+    
+    init?(dictionary: [String:AnyObject]){
+        guard let body = dictionary[keyBody] as? String else
+        {return nil}
+        self.body = body
     }
     
 }
 
 func ==(lhs: Note, rhs: Note) -> Bool {
-    return lhs.title == rhs.title && lhs.body == rhs.body
+    return lhs.body == rhs.body
     
     
 }
