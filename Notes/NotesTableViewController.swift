@@ -10,8 +10,16 @@ import UIKit
 
 class NotesTableViewController: UITableViewController, UITextFieldDelegate {
     
+    var notes = [Note]()
+    var filteredNotes = [Note]()
+    let searchController = UISearchController(searchResultsController: nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
     }
     
     override func didReceiveMemoryWarning() {
@@ -23,6 +31,13 @@ class NotesTableViewController: UITableViewController, UITextFieldDelegate {
         tableView.reloadData()
     }
     
+    func filterContentForSearchText(searchText: String) {
+          filteredNotes = notes.filter({( notes : Note) -> Bool in
+            return notes.body.lowercaseString.containsString(searchText.lowercaseString)
+            })
+        tableView.reloadData()
+    }
+    
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -30,15 +45,23 @@ class NotesTableViewController: UITableViewController, UITextFieldDelegate {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchController.active && searchController.searchBar.text != "" {
+            return filteredNotes.count
+        }
         return NoteController.sharedController.notes.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("noteCell", forIndexPath: indexPath)
-        let note = NoteController.sharedController.notes[indexPath.row]
+        let note: Note
+        if searchController.active && searchController.searchBar.text != "" {
+        note = filteredNotes[indexPath.row]
+        cell.textLabel?.text = note.body
+        } else {
+        note = NoteController.sharedController.notes[indexPath.row] }
         cell.textLabel?.text = note.body
         return cell
-    }
+        }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {

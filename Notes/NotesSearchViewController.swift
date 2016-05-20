@@ -8,8 +8,9 @@
 
 import UIKit
 
-class NotesSearchViewController: UISearchBar {
-    
-    
+    extension NotesTableViewController: UISearchResultsUpdating {
+        func updateSearchResultsForSearchController(searchController: UISearchController) {
+            filterContentForSearchText(searchController.searchBar.text!)
+        }
+    }
 
-}
