@@ -32,9 +32,9 @@ class NotesTableViewController: UITableViewController, UITextFieldDelegate {
     }
     
     func filterContentForSearchText(searchText: String) {
-          filteredNotes = notes.filter({( notes : Note) -> Bool in
-            return notes.body.lowercaseString.containsString(searchText.lowercaseString)
-            })
+        filteredNotes = notes.filter({( note: Note) -> Bool in
+            return note.body.lowercaseString.containsString(searchText.lowercaseString)
+        })
         tableView.reloadData()
     }
     
@@ -55,13 +55,13 @@ class NotesTableViewController: UITableViewController, UITextFieldDelegate {
         let cell = tableView.dequeueReusableCellWithIdentifier("noteCell", forIndexPath: indexPath)
         let note: Note
         if searchController.active && searchController.searchBar.text != "" {
-        note = filteredNotes[indexPath.row]
-        cell.textLabel?.text = note.body
+            note = filteredNotes[indexPath.row]
+            cell.textLabel?.text = note.body
         } else {
-        note = NoteController.sharedController.notes[indexPath.row] }
+            note = NoteController.sharedController.notes[indexPath.row] }
         cell.textLabel?.text = note.body
         return cell
-        }
+    }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
@@ -71,6 +71,8 @@ class NotesTableViewController: UITableViewController, UITextFieldDelegate {
         } else if editingStyle == .Insert {
         }
     }
+    
+    
     
     // MARK: - Navigation
     
@@ -86,4 +88,18 @@ class NotesTableViewController: UITableViewController, UITextFieldDelegate {
     }
     
     
+}
+
+extension NotesTableViewController: UISearchBarDelegate {
+    // MARK: - UISearchBar Delegate
+    func searchBar(searchBar: UISearchBar) {
+        filterContentForSearchText(searchBar.text!)
+    }
+}
+
+extension NotesTableViewController: UISearchResultsUpdating {
+    // MARK: - UISearchResultsUpdating Delegate
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
 }
