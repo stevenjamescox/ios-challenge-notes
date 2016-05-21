@@ -77,8 +77,7 @@ class NotesTableViewController: UITableViewController, UITextFieldDelegate {
     // MARK: - Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "addSegue" {
-        } else if segue.identifier == "editSegue"{
+        if segue.identifier == "editSegue"{
             let notesDetailViewController = segue.destinationViewController as? NotesDetailViewController
             if let indexPath = tableView.indexPathForSelectedRow {
                 let note = NoteController.sharedController.notes[indexPath.row]

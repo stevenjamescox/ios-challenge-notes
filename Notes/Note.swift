@@ -27,7 +27,6 @@ class Note: Equatable {
         {return nil}
         self.body = body
     }
-    
 }
 
 func ==(lhs: Note, rhs: Note) -> Bool {

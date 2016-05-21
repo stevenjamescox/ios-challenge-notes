@@ -16,6 +16,9 @@ class NoteController {
     
     var notes: [Note] = []
     
+    init(){
+        loadFromPersistentStorage()}
+    
     func addNote(note: Note){
         notes.append(note)
         saveToPersistentStorage()
